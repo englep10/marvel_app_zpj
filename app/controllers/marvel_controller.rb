@@ -3,7 +3,7 @@ class MarvelController < ApplicationController
 	def index
   		if params[:search]
     	search = params[:search].gsub(' ', '+')
-    	response = HTTParty.get("http://gateway.marvel.com/v1/public/characters?apikey=5e665d8cd10204f361468c880972d41b")
+    	response = HTTParty.get("http://gateway.marvel.com/v1/public/creators/32?ts=1&apikey=5e665d8cd10204f361468c880972d41b&hash=74d6bf483eaaa4692876c00eb0fa9e31")
     	results = JSON.parse(response.body)
     	@results = results['name']
   		else
