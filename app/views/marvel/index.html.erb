@@ -1,0 +1,13 @@
+ <h1>Marvel Superhero Search engine</h1>
+
+ <form action="/marvel" method="get">
+  <label>Search: <input name="search"></label>
+  <button>Submit</button>
+ </form>
+
+
+ <ul>
+  <% @results.each do |result| %>
+    <li><a href="/marvel/<%= result['marvel_id'] %>"><%= result['name'] %></a></li>
+  <% end %>
+ </ul>
