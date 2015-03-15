@@ -15,10 +15,13 @@
  <ul>
   <% if @results.present? %>
   	<% @results.each do |result| %>
-    	<li><%= result['name'] %></li>
+    	<li><%= link_to result['name'], marvel_path(result['id']) %></li>
+    	
   	<% end %>
   <% else %>
   	<p>"There are no superheroes with that name"</p>
   <% end %>
 
- </ul>
+
+
+</ul>
