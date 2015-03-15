@@ -1,7 +1,13 @@
  <h1>Marvel Superhero Search engine</h1>
-
+<!-- 
  <form action="/marvel" method="get">
   <label>Search: <input name="search"></label>
+  <button>Submit</button>
+ </form> -->
+
+
+ <form action="/marvel" method="get">
+  <label><input name="search"></label>
   <button>Submit</button>
  </form>
 
@@ -10,9 +16,14 @@
 <% if @result %>
   <% if @result.present? %>
  <ul>
-  <% @results.each do |result| %>
-    <li><a href="/marvel/<%= result['marvel_id'] %>"><%= result['name'] %></a></li>
+  <% if @results.present? %>
+  	<% @results.each do |result| %>
+    	<li><%= result['name'] %></li>
+  	<% end %>
+  <% else %>
+  	<p>"There are no superheroes with that name"</p>
   <% end %>
+<<<<<<< HEAD
  </ul>
  <% else %>
     <p>Whoops, we couldn't find that one.</p>
@@ -20,3 +31,7 @@
   <% end %> 
 </div>
 
+=======
+
+ </ul>
+>>>>>>> abda40c70c328a1aad316779c16b8e90fca35a49
